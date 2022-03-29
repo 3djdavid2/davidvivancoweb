@@ -1,15 +1,17 @@
 *{
-    color: rgb(115, 192, 243)
+    color: rgb(115, 192, 243);
+    font-family: 'Courier New', Courier, monospace;
 }
 .container{
     height: 800px;
     padding-top: 5px;
     padding-left: 10px;
     background-color: rgb(67, 52, 119); /* For browsers that do not support gradients */
-    background-image: linear-gradient(to right, rgb(84, 82, 212) , rgb(133, 123, 221));
+    background-image: linear-gradient(to right, rgb(75, 74, 136) , rgb(133, 123, 221));
 }
 h1{
     color: azure;
+    font-family: 'Courier New', Courier, monospace;
     padding-bottom: 5px;
     margin-bottom: 5px;
 }
