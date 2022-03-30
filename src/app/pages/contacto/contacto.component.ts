@@ -25,17 +25,16 @@ export class ContactoComponent implements OnInit {
   }
 
   onSubmit() {
+
     this.contactService.sendMessage(this.formulario.value)
       .subscribe({
         next: (res: any) => {
-          console.log("ok", res)
-          alert("Enviado")
+          
+          alert(res.message)
           this.router.navigate(['/portafolio']);
-          return false
-
         },
         error: (e: any) => {
-          console.log(e)
+          console.log("el error es:", e)
         },
         complete: () => {
           console.info('completed')
