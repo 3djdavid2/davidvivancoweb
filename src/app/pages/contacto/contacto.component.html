@@ -4,26 +4,26 @@
     <h2>whatsapp: <a href="https://wa.me/56921630936">+569 2163 0936</a></h2>
     <h2>Correo Electrónico: <a href="desarrollowebdavid@gmail.com">desarrollowebdavid@gmail.com</a></h2>
 
-    <div>
+    <div class="formulario">
         <h2>Formulario de contacto</h2>
-        <form>
+        <form [formGroup]= "formulario" (ngSubmit)="onSubmit()">
             <div >
                 <label>Nombre</label>
-                <input type="text" name="nombre" >
+                <input type="text" required formControlName="nombre">
             </div>
             <div >
                 <label>Asunto</label>
-                <input type="text" name="asunto" >
+                <input type="text" required formControlName="asunto">
             </div>
             <div >
                 <label>E-mail</label>
-                <input type="email" name="email" >
+                <input type="email" required formControlName="email">
             </div>
             <div >
                 <label>Mensaje</label>
-                <textarea cols='30' rows='6' name='mensaje' ></textarea>
+                <textarea cols='30' rows='6' required formControlName="mensaje"></textarea>
             </div>
-            <button type="submit">Enviar</button>
+            <button>Enviar</button>
         </form>
     </div>
 </div>
