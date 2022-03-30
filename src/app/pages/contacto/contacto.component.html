@@ -23,7 +23,7 @@
                 <label>Mensaje</label>
                 <textarea cols='30' rows='6' required formControlName="mensaje"></textarea>
             </div>
-            <button>Enviar</button>
+            <button [disabled]="!formulario.valid">Enviar</button>
         </form>
     </div>
 </div>
