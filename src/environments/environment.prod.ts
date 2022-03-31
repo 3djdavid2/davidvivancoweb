@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: '34.198.236.213/'
+  baseUrl: 'https://34.198.236.213:3000/send-email'
 };

@@ -13,6 +13,6 @@ export class ContactService {
 
   sendMessage({nombre, asunto, email, mensaje}:any){
     const bodyRequest = {nombre, asunto, email, mensaje}        
-    return this.http.post<any>("http://34.198.236.213:3000/send-email", bodyRequest);
+    return this.http.post<any>(this.URI, bodyRequest);
   }
 }
