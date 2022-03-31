@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:3000/send-email'
+  baseUrl: '34.198.236.213/'
+  // baseUrl: 'http://localhost:3000/send-email'
 };
 
 /*
