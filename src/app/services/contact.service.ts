@@ -11,8 +11,8 @@ export class ContactService {
 
   constructor(private http: HttpClient) { }
 
-  sendMessage({nombre, asunto, email, mensaje}:any){
-    const bodyRequest = {nombre, asunto, email, mensaje}        
+  sendMessage({nombre, telefono, email, mensaje}:any){
+    const bodyRequest = {nombre, telefono, email, mensaje}        
     return this.http.post<any>(this.URI, bodyRequest);
   }
 }
