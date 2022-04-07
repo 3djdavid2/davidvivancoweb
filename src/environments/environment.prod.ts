@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://davidvivancowebapi.com/send-email'
+  baseUrl: 'http://3.85.178.212/send-email'
 };

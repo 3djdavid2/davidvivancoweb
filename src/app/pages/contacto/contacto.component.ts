@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ContactService } from 'src/app/services/contact.service';
 
@@ -13,10 +13,13 @@ export class ContactoComponent implements OnInit {
   formulario: FormGroup;
 
   constructor(private contactService: ContactService, private router: Router) {
+
     this.formulario = new FormGroup({
-      nombre: new FormControl(''),
-      asunto: new FormControl(''),
-      email: new FormControl(''),
+      nombre: new FormControl('', [this.letrasValidators]),
+      telefono: new FormControl(''),
+      email: new FormControl('', [Validators.required,
+      Validators.pattern(/^[0-9a-zA-Z]+([0-9a-zA-Z]*[-._+])*[0-9a-zA-Z]+@[0-9a-zA-Z]+([-.][0-9a-zA-Z]+)*([0-9a-zA-Z]*[.])[a-zA-Z]{2,6}$/)
+      ]),
       mensaje: new FormControl(''),
     })
   }
@@ -29,7 +32,7 @@ export class ContactoComponent implements OnInit {
     this.contactService.sendMessage(this.formulario.value)
       .subscribe({
         next: (res: any) => {
-          
+
           alert(res.message)
           this.router.navigate(['/portafolio']);
         },
@@ -42,7 +45,16 @@ export class ContactoComponent implements OnInit {
       })
   }
 
+  get f() {
+    return this.formulario.controls;
+  }
 
+  letrasValidators(formControl:any){
+    const value= formControl.value;
+    console.log(value)
+    return null
+
+  }
 
 
 }
