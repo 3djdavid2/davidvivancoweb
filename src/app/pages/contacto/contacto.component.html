@@ -1,29 +1,30 @@
 <div>
     <h1>Contacto</h1>
-    <h2>Teléfono celular: +569 2163 0936</h2>
-    <h2>whatsapp: <a href="https://wa.me/56921630936">+569 2163 0936</a></h2>
+    
+    <h2>Whatsapp: <br><a href="https://wa.me/56921630936">+569 2163 0936</a></h2>
     <h2>Correo Electrónico: <a href="desarrollowebdavid@gmail.com">desarrollowebdavid@gmail.com</a></h2>
 
-    <div class="formulario">
-        <h2>Formulario de contacto</h2>
-        <form [formGroup]= "formulario" (ngSubmit)="onSubmit()">
-            <div >
-                <label>Nombre</label>
-                <input type="text" required formControlName="nombre">
-            </div>
-            <div >
-                <label>Asunto</label>
-                <input type="text" required formControlName="asunto">
-            </div>
-            <div >
-                <label>E-mail</label>
-                <input type="email" required formControlName="email">
-            </div>
-            <div >
-                <label>Mensaje</label>
-                <textarea cols='30' rows='6' required formControlName="mensaje"></textarea>
-            </div>
-            <button [disabled]="!formulario.valid">Enviar</button>
+    <div><br>
+        <h1>Formulario de contacto</h1>
+
+        <form class="container" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+           
+                <label class="nombre">Nombre</label>
+                <input class="input1" type="text" required formControlName="nombre">
+           
+           
+                <label class="asunto">Asunto</label>
+                <input class="input2" type="text" required formControlName="asunto">
+          
+            
+                <label class="email">E-mail</label>
+                <input class="input3" type="email" required formControlName="email">
+           
+          
+                <label class="mensaje">Mensaje</label>
+                <textarea class="textarea" cols='30' rows='6' required formControlName="mensaje"></textarea>
+          
+            <button class="enviar" [disabled]="!formulario.valid">Enviar</button>
         </form>
     </div>
 </div>
