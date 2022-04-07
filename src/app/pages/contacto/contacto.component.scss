@@ -10,17 +10,24 @@
 
 .container{
     display: grid;
-    
+    max-width: 500px;    
     grid-template-areas:
-    'nombre input1 input1 input1'
-    'asunto input2 input2 input2'
-    'email input3 input3 input3'
-    'mensaje textarea textarea textarea'
-    'mensaje enviar enviar enviar';
-    gap: 15px;
+    'nombre input1 input1 '
+    'asunto input2 input2 '
+    'email input3 input3 '
+    'mensaje textarea textarea '
+    'mensaje enviar enviar ';
+    gap: 10px;
   
 }
 div{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 12px;
 }
+
+input:focus, .textarea:focus{
+    outline: none !important;
+    border:1px solid red;
+    box-shadow: 0 0 10px #719ECE;
+}
+

@@ -6,10 +6,13 @@ import { ContactoComponent } from './contacto.component';
 import { ContactService } from 'src/app/services/contact.service';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AutoFocusInputDirective } from 'src/app/directivas/auto-focus-input.directive';
+
 
 @NgModule({
   declarations: [
-    ContactoComponent
+    ContactoComponent,
+    AutoFocusInputDirective
   ],
   imports: [
     CommonModule,
