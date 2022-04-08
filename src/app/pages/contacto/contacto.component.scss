@@ -42,6 +42,7 @@
         "titulo"
         "formulario";
     gap: 10px;
+    border-bottom: 50px;
 }
 .formulario {
     display: grid;
@@ -68,4 +69,15 @@ input:focus,
 }
 .titulo{
     padding-top: 20px;
+}
+
+.tituloFinal{
+    margin-bottom: 290px;
+}
+
+@media screen and (max-width:600px) {
+    .tituloFinal{
+        margin-bottom: 200px;
+    }
+    
 }
