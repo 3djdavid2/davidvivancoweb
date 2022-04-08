@@ -34,7 +34,9 @@
 
 .container {
     display: grid;
-    text-align: center;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
     max-width: 400px;
     grid-template-areas:
         "titulo"
@@ -63,4 +65,7 @@ input:focus,
     outline: none !important;
     border: 1px solid blue;
     box-shadow: 0 0 10px #719ece;
+}
+.titulo{
+    padding-top: 20px;
 }

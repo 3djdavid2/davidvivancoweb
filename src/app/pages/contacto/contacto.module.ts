@@ -8,6 +8,9 @@ import { ContactService } from 'src/app/services/contact.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AutoFocusInputDirective } from 'src/app/directivas/auto-focus-input.directive';
 
+import {MatButtonModule} from '@angular/material/button';
+
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { AutoFocusInputDirective } from 'src/app/directivas/auto-focus-input.dir
     CommonModule,
     ContactoRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule
   ],
   providers:[ContactService]
 })
