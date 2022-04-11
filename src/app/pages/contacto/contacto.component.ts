@@ -21,6 +21,7 @@ export class ContactoComponent implements OnInit {
       Validators.pattern(/^[0-9a-zA-Z]+([0-9a-zA-Z]*[-._+])*[0-9a-zA-Z]+@[0-9a-zA-Z]+([-.][0-9a-zA-Z]+)*([0-9a-zA-Z]*[.])[a-zA-Z]{2,6}$/)
       ]),
       mensaje: new FormControl(''),
+      captcha: new FormControl('')
     })
   }
 
@@ -28,7 +29,7 @@ export class ContactoComponent implements OnInit {
   }
 
   onSubmit() {
-
+   
     this.contactService.sendMessage(this.formulario.value)
       .subscribe({
         next: (res: any) => {
@@ -49,11 +50,29 @@ export class ContactoComponent implements OnInit {
     return this.formulario.controls;
   }
 
-  letrasValidators(formControl:any){
-    const value= formControl.value;
+  letrasValidators(formControl: any) {
+    const value = formControl.value;
     console.log(value)
     return null
 
+  }
+
+  //captcha
+  onVerify(token: string) {
+    console.log("el captcha es resuelto de manera correcta")
+    this.onSubmit();
+    // The verification process was successful.
+    // You can verify the token on your server now.
+  }
+
+  onExpired(response: any) {
+    // The verification expired.
+    console.log("expirado ", response)
+  }
+
+  onError(error: any) {
+    // An error occured during the verification process.
+    console.log("error captcha", error)
   }
 
 

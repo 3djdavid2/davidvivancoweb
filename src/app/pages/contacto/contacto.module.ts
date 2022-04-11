@@ -9,6 +9,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AutoFocusInputDirective } from 'src/app/directivas/auto-focus-input.directive';
 
 import {MatButtonModule} from '@angular/material/button';
+import { NgHcaptchaModule } from 'ng-hcaptcha';
+
+import { environment } from 'src/environments/environment';
 
 
 
@@ -18,6 +21,10 @@ import {MatButtonModule} from '@angular/material/button';
     AutoFocusInputDirective
   ],
   imports: [
+    NgHcaptchaModule.forRoot({
+      siteKey:environment.siteKey,
+      languageCode: 'es' // optional, will default to browser language
+  }),
     CommonModule,
     ContactoRoutingModule,
     FormsModule,

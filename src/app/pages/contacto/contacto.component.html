@@ -1,7 +1,8 @@
 <div class="container">
     <h1 class="titulo">Formulario de contacto</h1>
 
-    <form class="formulario" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <!-- <form class="formulario" [formGroup]="formulario" (ngSubmit)="onSubmit()"> -->
+    <form class="formulario" [formGroup]="formulario">
 
         <label class="nombre">Nombre</label>
         <input AutoFocusInput class="input1" type="text" required formControlName="nombre">
@@ -20,12 +21,17 @@
 
         <label class="mensaje">Mensaje</label>
         <textarea class="textarea" cols='30' rows='6' required formControlName="mensaje"></textarea>
-
-        <button mat-raised-button color="primary" class="enviar" [disabled]="!formulario.valid">Enviar</button>
+        <!-- <ng-hcaptcha formControlName="captcha"></ng-hcaptcha> -->
+        <button  ngHcaptchaInvisibleButton
+        (verify)="onVerify($event)"
+        (expired)="onExpired($event)"
+        (error)="onError($event)" 
+        mat-raised-button color="primary" class="enviar" [disabled]="!formulario.valid">Enviar</button>
     </form>
     <br>
     <h3>Whatsapp: <br><a href="https://wa.me/56921630936">+569 2163 0936</a></h3>
-    <h3 class="tituloFinal">Correo Electrónico: <br><a href="desarrollowebdavid@gmail.com">desarrollowebdavid@gmail.com</a></h3>
+    <h3 class="tituloFinal">Correo Electrónico: <br><a
+            href="desarrollowebdavid@gmail.com">desarrollowebdavid@gmail.com</a></h3>
 
 </div>
 <br>
