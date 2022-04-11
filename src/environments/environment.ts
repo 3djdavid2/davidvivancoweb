@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://www.davidvivancowebapi.com/send-email'
+  baseUrl: 'https://www.davidvivancowebapi.com/send-email'
   // baseUrl: 'http://localhost:3000/send-email'
 };
 
