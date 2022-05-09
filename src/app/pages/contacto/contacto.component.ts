@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
@@ -12,24 +13,29 @@ export class ContactoComponent implements OnInit {
 
   formulario: FormGroup;
 
-  constructor(private contactService: ContactService, private router: Router) {
-
+  constructor(
+    private contactService: ContactService, 
+    private router: Router
+    )
+     {
     this.formulario = new FormGroup({
       nombre: new FormControl('', [this.letrasValidators]),
       telefono: new FormControl(''),
       email: new FormControl('', [Validators.required,
       Validators.pattern(/^[0-9a-zA-Z]+([0-9a-zA-Z]*[-._+])*[0-9a-zA-Z]+@[0-9a-zA-Z]+([-.][0-9a-zA-Z]+)*([0-9a-zA-Z]*[.])[a-zA-Z]{2,6}$/)
       ]),
-      mensaje: new FormControl(''),
-      captcha: new FormControl('')
+      mensaje: new FormControl('')    
+     
     })
   }
+
 
   ngOnInit(): void {
   }
 
+ 
   onSubmit() {
-   
+
     this.contactService.sendMessage(this.formulario.value)
       .subscribe({
         next: (res: any) => {
@@ -52,28 +58,9 @@ export class ContactoComponent implements OnInit {
 
   letrasValidators(formControl: any) {
     const value = formControl.value;
-    console.log(value)
     return null
 
   }
 
-  //captcha
-  onVerify(token: string) {
-    console.log("el captcha es resuelto de manera correcta")
-    this.onSubmit();
-    // The verification process was successful.
-    // You can verify the token on your server now.
-  }
-
-  onExpired(response: any) {
-    // The verification expired.
-    console.log("expirado ", response)
-  }
-
-  onError(error: any) {
-    // An error occured during the verification process.
-    console.log("error captcha", error)
-  }
-
-
+ 
 }

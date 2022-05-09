@@ -4,9 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://www.davidvivancowebapi.com/send-email',
-  siteKey: 'a223a748-8de4-4d61-8483-4c51f6b421fd'
-  // baseUrl: 'http://localhost:3000/send-email'
+ // baseUrl: 'http://52.204.109.91/send-email',
+  baseUrl: 'http://localhost:3000/send-email'
 };
 
 /*

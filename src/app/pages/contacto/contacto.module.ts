@@ -8,12 +8,7 @@ import { ContactService } from 'src/app/services/contact.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AutoFocusInputDirective } from 'src/app/directivas/auto-focus-input.directive';
 
-import {MatButtonModule} from '@angular/material/button';
-import { NgHcaptchaModule } from 'ng-hcaptcha';
-
-import { environment } from 'src/environments/environment';
-
-
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -21,16 +16,12 @@ import { environment } from 'src/environments/environment';
     AutoFocusInputDirective
   ],
   imports: [
-    NgHcaptchaModule.forRoot({
-      siteKey:environment.siteKey,
-      languageCode: 'es' // optional, will default to browser language
-  }),
     CommonModule,
     ContactoRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule
   ],
-  providers:[ContactService]
+  providers: [ContactService]
 })
 export class ContactoModule { }
